@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js-remove</title>
+</head>
+<body>
+    <table id="table" border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td>FN1</td>
+            <td>LN1</td>
+            <td>10</td>
+            <td>remove</td>
+        </tr>
+        <tr>
+            <td>FN2</td>
+            <td>LN2</td>
+            <td>20</td>
+            <td>remove</td>
+        </tr>
+        <tr>
+            <td>FN3</td>
+            <td>LN3</td>
+            <td>30</td>
+            <td>remove</td>
+        </tr>
+        <tr>
+            <td>FN4</td>
+            <td>LN4</td>
+            <td>40</td>
+            <td>remove</td>
+        </tr>
+        <tr>
+            <td>FN5</td>
+            <td>LN5</td>
+            <td>50</td>
+            <td>remove</td>
+        </tr>
+    </table>
+    <script>
+        let main = document.getElementById("table")
+        for (let i = 1; i < main.rows.length; i++) {
+            const element = main.rows[i];
+            element.lastElementChild.onclick = function(){
+                let condition = confirm("YES | NO")
+                if (condition) {
+                    let index = this.parentElement.rowIndex
+                    main.deleteRow(index)
+                }
+            }
+        }
+    </script>
+</body>
+</html>
